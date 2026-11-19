@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil | Federação de Airsoft do Espírito Santo (FAES)</title>
+  <meta name="description" content="Perfil de operadores filiados à Federação de Airsoft do Espírito Santo (FAES).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO FIXO -->
+  <header class="cabecalho">
+    <div class="container cabecalho-interno">
+      <a href="index.html" class="marca" aria-label="Início da FAES">
+  <img class="logo-img" src="imagens/logo-faes.png" alt="Logo da Federação de Airsoft do Espírito Santo (FAES)" width="42" height="42">
+  <span class="marca-texto">F.A.E.S</span>
+</a>
+
+      <nav class="menu" id="menu-principal" aria-label="Menu principal"></nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="titulo-pagina">
+      <div class="container">
+        <h1 id="titulo-perfil">Perfil</h1>
+        <p class="texto-pagina" id="subtitulo-perfil">Carregando...</p>
+      </div>
+    </section>
+
+    <section class="secao" aria-live="polite">
+      <div class="container pagina-perfil">
+
+        <!-- AVISO: precisa entrar -->
+        <div id="aviso-login" class="card oculto">
+          <p>Entre na sua conta para ver os perfis dos operadores da FAES.</p>
+          <div class="acoes-evento">
+            <a href="login.html" class="botao botao-principal">Entrar / Cadastrar</a>
+          </div>
+        </div>
+
+        <!-- PERFIL PÚBLICO (visto por outros usuários) -->
+        <div id="visao-publica" class="card oculto">
+          <h2 id="publico-nome"></h2>
+          <dl class="perfil-dados">
+            <div>
+              <dt>Equipe</dt>
+              <dd id="publico-equipe"></dd>
+            </div>
+            <div>
+              <dt>Cidade</dt>
+              <dd id="publico-cidade"></dd>
+            </div>
+            <div>
+              <dt>Idade</dt>
+              <dd id="publico-idade"></dd>
+            </div>
+          </dl>
+          <h3>Equipamentos e loadout</h3>
+          <p id="publico-equipamentos" class="texto-quebra"></p>
+        </div>
+
+        <!-- ENVIAR MENSAGEM (só para usuário logado vendo outro operador) -->
+        <div id="bloco-enviar" class="card oculto">
+          <h2>Enviar mensagem</h2>
+          <form id="form-mensagem" class="formulario" novalidate>
+            <div class="campo campo-largo">
+              <label for="texto-mensagem">Mensagem (até 1000 caracteres)</label>
+              <textarea id="texto-mensagem" rows="4" maxlength="1000"></textarea>
+            </div>
+            <div class="acoes-evento campo-largo">
+              <button type="submit" class="botao botao-principal">Enviar</button>
+            </div>
+          </form>
+          <div id="mensagem-envio" class="mensagem oculto" role="status" aria-live="polite"></div>
+        </div>
+
+        <!-- EDIÇÃO (somente o próprio usuário) -->
+        <form id="form-perfil" class="card oculto" novalidate>
+          <h2>Meus dados</h2>
+
+          <p class="nota-privacidade campo-largo">
+            Nome, equipe, cidade, idade e equipamentos aparecem para os outros usuários.
+            Seu e-mail e telefone são privados.
+          </p>
+
+          <div class="campo">
+            <label for="campo-nome">Nome</label>
+            <input id="campo-nome" name="nome" type="text" autocomplete="name" maxlength="80" required>
+          </div>
+
+          <div class="campo">
+            <label for="campo-equipe">Equipe</label>
+            <input id="campo-equipe" name="equipe" type="text" list="lista-equipes" maxlength="80" placeholder="Escolha da lista ou digite o nome">
+          </div>
+
+          <div class="campo">
+            <label for="campo-cidade">Cidade</label>
+            <input id="campo-cidade" name="cidade" type="text" autocomplete="address-level2" maxlength="80" placeholder="Ex.: Vila Velha">
+          </div>
+
+          <div class="campo">
+            <label for="campo-idade">Idade</label>
+            <input id="campo-idade" name="idade" type="number" min="10" max="99" inputmode="numeric" placeholder="Ex.: 28">
+          </div>
+
+          <div class="campo campo-largo">
+            <label for="campo-equipamentos">Equipamentos e loadout</label>
+            <textarea id="campo-equipamentos" name="equipamentos" maxlength="1000" rows="5" placeholder="Ex.: Rifle airsoft M4, marca Rossi, FPS 400&#10;Colete tático, capacete, óculos balísticos"></textarea>
+          </div>
+
+          <div class="acoes-evento campo-largo">
+            <button type="submit" class="botao botao-principal">Salvar perfil</button>
+          </div>
+        </form>
+
+        <!-- MEUS EVENTOS (só no perfil próprio) -->
+        <div id="bloco-meus-eventos" class="card oculto">
+          <h2>Meus eventos</h2>
+          <p class="nota-privacidade">Acompanhe o status dos eventos que você enviou para a FAES.</p>
+          <div id="lista-meus-eventos" class="lista-admin" aria-live="polite"></div>
+        </div>
+
+        <div id="mensagem" class="mensagem oculto" role="status" aria-live="polite"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Opções de equipe (lidas de dados/equipes.json) -->
+  <datalist id="lista-equipes"></datalist>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="rodape-titulo">Federação de Airsoft do Espírito Santo</p>
+        <p>Sigla: FAES</p>
+        <p>CNPJ: 34.280.373/0001-85</p>
+      </div>
+      <div>
+        <p class="rodape-titulo">Menu</p>
+        <p><a href="index.html">Início</a></p>
+        <p><a href="equipes.html">Equipes</a></p>
+        <p><a href="eventos.html">Eventos</a></p>
+        <p><a href="filiacao.html">Filiação</a></p>
+        <p><a href="noticias.html">Notícias</a></p>
+      </div>
+      <div>
+        <p class="rodape-titulo">Contato</p>
+        <p>
+          E-mail:
+          <a href="mailto:federacao.faes@gmail.com">federacao.faes@gmail.com</a>
+        </p>
+        <p>
+          Instagram:
+          <a href="https://instagram.com/federacao.faes" target="_blank" rel="noopener">@federacao.faes</a>
+        </p>
+        <p>Sede: Vila Velha – ES</p>
+        <!-- PREENCHER: endereço completo -->
+        <p>Endereço completo: PREENCHER</p>
+      </div>
+    </div>
+    <p class="rodape-direitos">© 2026 FAES. Todos os direitos reservados.</p>
+  </footer>
+
+  <script type="module" src="js/perfil.js"></script>
+  <script type="module" src="js/enviar-mensagem.js"></script>
+  <script type="module" src="js/meus-eventos.js"></script>
+  <script type="module" src="js/auth-menu.js"></script>
+<script type="module" src="js/menu.js"></script>
+</body>
+</html>

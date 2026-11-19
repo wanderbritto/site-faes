@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federação de Airsoft do Espírito Santo (FAES)</title>
+  <meta name="description" content="Site oficial da Federação de Airsoft do Espírito Santo (FAES): equipes filiadas, eventos, filiação e notícias.">
+
+  <!-- Fontes do Google (precisa de internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos do site -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Atalho para quem navega pelo teclado -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- CABEÇALHO FIXO -->
+  <header class="cabecalho">
+    <div class="container cabecalho-interno">
+      <a href="index.html" class="marca" aria-label="Início da FAES">
+  <img class="logo-img" src="imagens/logo-faes.png" alt="Logo da Federação de Airsoft do Espírito Santo (FAES)" width="42" height="42">
+  <span class="marca-texto">F.A.E.S</span>
+</a>
+
+     <nav class="menu" id="menu-principal" aria-label="Menu principal"></nav>
+
+      <a href="filiacao.html" class="botao botao-principal botao-cabecalho">Filie-se agora</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- BANNER CENTRAL: só os dois botões, no canto inferior direito -->
+    <section class="hero" aria-label="Destaque">
+      <div class="container hero-central">
+        <!-- Título oculto na tela, mas lido por leitores de tela e buscadores -->
+        <h1 class="sr-only">Federação de Airsoft do Espírito Santo</h1>
+        <div class="botoes">
+          <a href="filiacao.html" class="botao botao-principal">Filie-se agora</a>
+          <a href="eventos.html" class="botao botao-secundario">Ver eventos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE A FAES -->
+    <section class="secao sobre-resumo-secao" id="sobre">
+  <div class="container sobre-resumo">
+    <p class="rotulo-secao">Quem somos</p>
+    <h2>Sobre a FAES</h2>
+    <p>
+      A Federação de Airsoft do Espírito Santo (FAES) reúne equipes e atletas que praticam airsoft no estado,
+      com o objetivo de promover o esporte de forma organizada, segura e transparente.
+    </p>
+    <a href="sobre.html" class="botao botao-principal">Saiba mais</a>
+  </div>
+</section>
+
+    <!-- COMO SE FILIAR (PASSOS NUMERADOS) -->
+    <section class="secao" aria-labelledby="titulo-filiacao">
+      <div class="container">
+        <p class="rotulo">Filiação</p>
+        <h2 id="titulo-filiacao">Como se filiar</h2>
+        <ol class="passos">
+          <li>
+            <span class="passo-numero">01</span>
+            <h3>Preencha o formulário</h3>
+            <p>Escolha se você é equipe ou atleta individual e envie os dados pela página de filiação.</p>
+          </li>
+          <li>
+            <span class="passo-numero">02</span>
+            <h3>Envie a documentação</h3>
+            <!-- PREENCHER: confirmar a lista de documentos exigidos pela FAES -->
+            <p>Após o envio, a equipe confere os dados. Lista de documentos: PREENCHER.</p>
+          </li>
+          <li>
+            <span class="passo-numero">03</span>
+            <h3>Confirmação</h3>
+            <!-- PREENCHER: confirmar valor da filiação e prazo de resposta -->
+            <p>Você recebe a confirmação por e-mail. Valor e prazo: PREENCHER.</p>
+          </li>
+        </ol>
+        <div class="centralizado">
+          <a href="filiacao.html" class="botao botao-principal">Ir para o formulário de filiação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÓXIMOS EVENTOS (EXEMPLO) -->
+    <section class="secao secao-clara" aria-labelledby="titulo-eventos">
+      <div class="container">
+        <p class="rotulo">Agenda</p>
+        <h2 id="titulo-eventos">Próximos eventos</h2>
+        <div class="grade">
+
+          <!-- EXEMPLO: substituir pelos eventos reais depois -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Campeonato Estadual (exemplo)</h3>
+            <p>Local: Cidade – ES</p>
+            <p class="status status-aberto">Inscrições abertas</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Torneio Regional (exemplo)</h3>
+            <p>Local: Cidade – ES</p>
+            <p class="status status-encerrado">Inscrições encerradas</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Treinamento de Arbitragem (exemplo)</h3>
+            <p>Local: Cidade – ES</p>
+            <p class="status status-aberto">Inscrições abertas</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPES EM DESTAQUE (EXEMPLO) -->
+    <section class="secao secao-clara" aria-labelledby="titulo-equipes">
+      <div class="container">
+        <p class="rotulo">Filiadas</p>
+        <h2 id="titulo-equipes">Equipes em destaque</h2>
+        <div class="grade">
+
+          <!-- EXEMPLO: substituir pelas equipes filiadas reais depois -->
+          <article class="card card-clube">
+            <span class="selo">EXEMPLO</span>
+            <h3>Equipe Exemplo A</h3>
+            <p>Cidade – ES</p>
+            <p>Modalidade: Campo aberto</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card card-clube">
+            <span class="selo">EXEMPLO</span>
+            <h3>Equipe Exemplo B</h3>
+            <p>Cidade – ES</p>
+            <p>Modalidade: Woodland</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card card-clube">
+            <span class="selo">EXEMPLO</span>
+            <h3>Equipe Exemplo C</h3>
+            <p>Cidade – ES</p>
+            <p>Modalidade: Speedsoft</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ÚLTIMAS NOTÍCIAS (EXEMPLO) -->
+    <section class="secao" aria-labelledby="titulo-noticias">
+      <div class="container">
+        <p class="rotulo">Fique por dentro</p>
+        <h2 id="titulo-noticias">Últimas notícias</h2>
+        <div class="grade">
+
+          <!-- EXEMPLO: substituir pelas notícias reais depois -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Título da notícia (exemplo)</h3>
+            <p>Um resumo curto da notícia aparece aqui, em uma ou duas linhas.</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Título da notícia (exemplo)</h3>
+            <p>Um resumo curto da notícia aparece aqui, em uma ou duas linhas.</p>
+          </article>
+
+          <!-- EXEMPLO -->
+          <article class="card">
+            <span class="selo">EXEMPLO</span>
+            <p class="card-data">00/00/0000</p>
+            <h3>Título da notícia (exemplo)</h3>
+            <p>Um resumo curto da notícia aparece aqui, em uma ou duas linhas.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+    <section class="secao secao-clara" aria-labelledby="titulo-faq">
+      <div class="container">
+        <p class="rotulo">Dúvidas</p>
+        <h2 id="titulo-faq">Perguntas frequentes</h2>
+        <div class="faq">
+          <details>
+            <summary>Quem pode se filiar?</summary>
+            <!-- PREENCHER: resposta oficial da FAES -->
+            <p>Equipes e atletas individuais. Detalhes: PREENCHER.</p>
+          </details>
+          <details>
+            <summary>Menores de idade podem participar?</summary>
+            <!-- PREENCHER: regra oficial da FAES sobre menores e autorização dos responsáveis -->
+            <p>Resposta: PREENCHER.</p>
+          </details>
+          <details>
+            <summary>Quanto custa a filiação?</summary>
+            <!-- PREENCHER: valores oficiais -->
+            <p>Valores: PREENCHER.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="secao" aria-labelledby="titulo-contato">
+      <div class="container">
+        <p class="rotulo">Fale conosco</p>
+        <h2 id="titulo-contato">Contato</h2>
+        <div class="contato-grid">
+          <div>
+            <p>Tem dúvidas, sugestões ou quer fazer parte da FAES? Escreva para a federação.</p>
+            <ul class="lista-contato">
+              <li>
+                <strong>E-mail:</strong>
+                <a href="mailto:federacao.faes@gmail.com">federacao.faes@gmail.com</a>
+              </li>
+              <li>
+                <strong>Instagram:</strong>
+                <a href="https://instagram.com/federacao.faes" target="_blank" rel="noopener">@federacao.faes</a>
+              </li>
+              <li>
+                <strong>Sede:</strong>
+                <!-- PREENCHER: endereço completo (rua, número e bairro) -->
+                Vila Velha – Espírito Santo (ES)
+              </li>
+            </ul>
+          </div>
+          <div class="caixa-contato">
+            <p class="rotulo">Horário de atendimento</p>
+            <!-- PREENCHER: confirmar horários -->
+            <p>Segunda a sexta: PREENCHER</p>
+            <p>Sábado: PREENCHER</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container rodape-grid">
+      <div>
+        <p class="rodape-titulo">Federação de Airsoft do Espírito Santo</p>
+        <p>Sigla: FAES</p>
+        <p>CNPJ: 34.280.373/0001-85</p>
+      </div>
+      <div>
+        <p class="rodape-titulo">Menu</p>
+        <p><a href="index.html">Início</a></p>
+        <p><a href="equipes.html">Equipes</a></p>
+        <p><a href="eventos.html">Eventos</a></p>
+        <p><a href="filiacao.html">Filiação</a></p>
+        <p><a href="noticias.html">Notícias</a></p>
+      </div>
+      <div>
+        <p class="rodape-titulo">Sede</p>
+        <p>Vila Velha – Espírito Santo (ES)</p>
+        <!-- PREENCHER: endereço completo -->
+        <p>Endereço completo: PREENCHER</p>
+      </div>
+    </div>
+    <p class="rodape-direitos">© 2026 FAES. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do site (ficará vazio até a próxima etapa) -->
+<script type="module" src="js/auth-menu.js"></script>
+<script type="module" src="js/menu.js"></script>
+</body>
+</html>

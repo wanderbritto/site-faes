@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "Equipe Exemplo A",
+    "cidade": "Vila Velha",
+    "contato": "PREENCHER",
+    "exemplo": true
+  },
+  {
+    "nome": "Equipe Exemplo B",
+    "cidade": "Vitória",
+    "contato": "PREENCHER",
+    "exemplo": true
+  },
+  {
+    "nome": "Equipe Exemplo C",
+    "cidade": "Cariacica",
+    "contato": "PREENCHER",
+    "exemplo": true
+  },
+  {
+    "nome": "Equipe Exemplo D",
+    "cidade": "Colatina",
+    "contato": "PREENCHER",
+    "exemplo": true
+  }
+]
