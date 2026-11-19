@@ -1,0 +1,428 @@
+/* ============================================================
+   FAES | App mobile
+   Visual de aplicativo: cartões, barra inferior e carrossel.
+   ============================================================ */
+
+:root {
+  --ouro: #F4E071;
+  --ouro-forte: #D9BF45;
+  --fundo: #0C120A;
+  --superficie: #151C12;
+  --superficie-2: #1C2517;
+  --texto: #F2F0E6;
+  --texto-suave: #A9B19C;
+  --borda: rgba(255, 255, 255, 0.08);
+  --raio: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Coluna central, com a largura de um celular mesmo em telas maiores */
+.app {
+  position: relative;
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #14200F 0%, var(--fundo) 320px);
+  overflow-x: hidden;
+}
+
+/* ---------- Topo ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(12px + env(safe-area-inset-top)) 20px 12px;
+  background: rgba(12, 18, 10, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.topo-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topo-marca span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  color: var(--ouro);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--superficie-2);
+  border: 1.5px solid var(--ouro);
+  color: var(--ouro);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ---------- Conteúdo ---------- */
+
+.conteudo {
+  padding: 20px 18px 8px;
+}
+
+.bloco {
+  margin-top: 28px;
+}
+
+.titulo-bloco {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.cabeca-bloco {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.cabeca-bloco .titulo-bloco {
+  margin-bottom: 0;
+}
+
+.link-discreto {
+  color: var(--ouro);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ---------- Destaque ---------- */
+
+.destaque {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 22px 24px;
+  border-radius: 24px;
+  background-image:
+    linear-gradient(180deg, rgba(12, 18, 10, 0.25) 0%, rgba(12, 18, 10, 0.92) 100%),
+    url("../imagens/banner-faes.png");
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--borda);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.selo {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(244, 224, 113, 0.14);
+  color: var(--ouro);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.destaque h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 2.1rem;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.destaque-texto {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.destaque-acoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: transform 0.15s ease, filter 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-ouro {
+  background: linear-gradient(180deg, #F7E98A 0%, var(--ouro-forte) 100%);
+  color: #14140C;
+  box-shadow: 0 8px 22px rgba(244, 224, 113, 0.25);
+}
+
+.btn-vidro {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--texto);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---------- Atalhos ---------- */
+
+.acoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.acao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 16px;
+  border-radius: var(--raio);
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.acao:active {
+  transform: scale(0.97);
+  background: var(--superficie-2);
+}
+
+.acao-icone {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(244, 224, 113, 0.12);
+  color: var(--ouro);
+}
+
+.acao-icone svg {
+  width: 22px;
+  height: 22px;
+}
+
+.acao-titulo {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.acao-sub {
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* ---------- Carrossel de eventos ---------- */
+
+.trilho {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 18px;
+  margin: 0 -18px;
+  padding: 4px 18px 12px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.trilho::-webkit-scrollbar {
+  display: none;
+}
+
+.evento {
+  flex: 0 0 74%;
+  max-width: 300px;
+  scroll-snap-align: start;
+  padding: 16px;
+  border-radius: var(--raio);
+  background: linear-gradient(160deg, var(--superficie-2) 0%, var(--superficie) 100%);
+  border: 1px solid var(--borda);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evento-data {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ouro);
+  color: #14140C;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.evento-nome {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.evento-local {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+.evento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.evento-tags span {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 224, 113, 0.35);
+  color: var(--ouro);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.vazio {
+  width: 100%;
+  padding: 22px 16px;
+  border-radius: var(--raio);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  color: var(--texto-suave);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ---------- Contato ---------- */
+
+.cartao-contato {
+  padding: 20px;
+  border-radius: var(--raio);
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+}
+
+.contato-titulo {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contato-texto {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------- Barra inferior ---------- */
+
+.barra-inferior {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(480px, 100%);
+  z-index: 60;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(12, 18, 10, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--borda);
+}
+
+.aba-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+  color: var(--texto-suave);
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.aba-app svg {
+  width: 22px;
+  height: 22px;
+}
+
+.aba-app[aria-current="page"] {
+  color: var(--ouro);
+}
+
+.aba-app:active {
+  transform: scale(0.94);
+}
+
+/* ---------- Telas maiores (opcional) ---------- */
+
+@media (min-width: 481px) {
+  .app {
+    border-left: 1px solid var(--borda);
+    border-right: 1px solid var(--borda);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
