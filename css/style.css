@@ -3097,90 +3097,281 @@ body:has(.pagina-inicio) .hero {
   padding-top: 1rem;
 }
 /* ============================================================
-   CELULAR (até 768px): cabeçalho, banner e botões sem cortes
+   CELULAR (até 768px): visual limpo, profissional e sem cortes
    ============================================================ */
 
 @media (max-width: 768px) {
 
-  html, body {
-    overflow-x: hidden;
+  html,
+  body {
     max-width: 100%;
+    overflow-x: hidden;
   }
 
-  /* Cabeçalho em coluna: logo em cima, menu embaixo */
+  body {
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Cabeçalho ---------- */
+
+  .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.97);
+    border-bottom: 1px solid rgba(244, 224, 113, 0.15);
+  }
+
   .cabecalho .cabecalho-interno {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "marca usuario"
+      "menu  menu";
     align-items: center;
-    gap: 0.6rem;
-    padding-block: 0.75rem;
+    gap: 0.5rem 0.75rem;
+    min-height: 0;
+    padding-block: 0.65rem 0.4rem;
   }
 
   .cabecalho .marca {
-    justify-self: center;
+    grid-area: marca;
+    justify-self: start;
+    gap: 0.5rem;
   }
 
-  .cabecalho .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem 0.7rem;
-    min-width: 0;
-  }
-
-  .cabecalho .menu a {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-    white-space: normal;
+  .cabecalho .logo-img {
+    width: 40px;
+    height: 40px;
   }
 
   .cabecalho .marca-texto::before {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
-  /* Remove o espaço excessivo acima do conteúdo */
+  .cabecalho .area-usuario {
+    grid-area: usuario;
+    justify-self: end;
+  }
+
+  .cabecalho .area-usuario .botao {
+    min-height: 40px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  /* Menu em faixa horizontal deslizável, sem quebrar em linhas */
+  .cabecalho .menu {
+    grid-area: menu;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .cabecalho .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cabecalho .menu a {
+    flex: 0 0 auto;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .cabecalho .menu a[aria-current="page"] {
+    border-color: var(--ouro, #f4e071);
+    background: rgba(244, 224, 113, 0.14);
+    color: var(--ouro, #f4e071);
+  }
+
+  /* ---------- Conteúdo principal ---------- */
+
   main {
-    padding-top: 1rem;
+    padding-top: 0;
   }
 
   body:has(.pagina-perfil) main,
   body:has(.pagina-login) main,
   body:has(.pagina-operadores) main {
-    padding-top: 1rem;
+    padding-top: 0;
   }
 
-  /* Banner: ocupa a largura da tela e quebra o texto */
+  .container {
+    padding-inline: 1.1rem;
+  }
+
+  .secao {
+    padding-block: 2.25rem;
+  }
+
+  .secao h2,
+  .titulo-pagina h1 {
+    font-size: clamp(1.7rem, 7vw, 2.1rem);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .rotulo,
+  .rotulo-secao,
+  .selo-hero {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* ---------- Banner ---------- */
+
   .hero {
-    min-height: 60vh;
-    padding-inline: 1rem;
+    min-height: 68vh;
+    display: flex;
+    align-items: flex-end;
+    background-position: 62% center;
+    padding: 2rem 0 2.5rem;
   }
 
-  .hero h1,
-  .hero .sr-only {
-    overflow-wrap: anywhere;
+  .hero .hero-central {
+    width: 100%;
   }
 
   .hero .botoes {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    gap: 0.75rem;
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
   }
 
   .hero .botoes .botao {
     width: 100%;
-    text-align: center;
-    white-space: normal;
+    justify-content: center;
   }
 
-  /* Botões e cards dentro da largura da tela */
+  /* ---------- Botões ---------- */
+
   .botao {
+    min-height: 46px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
     white-space: normal;
+    text-align: center;
     max-width: 100%;
   }
 
-  .container {
-    padding-inline: 1rem;
+  .acoes-evento,
+  .sobre-acoes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    width: 100%;
+  }
+
+  .acoes-evento .botao,
+  .sobre-acoes .botao {
+    width: 100%;
+  }
+
+  /* ---------- Cards e grades ---------- */
+
+  .grade,
+  .lista-operadores,
+  #lista-meus-eventos,
+  .lista-mensagens,
+  #lista-admin {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card,
+  .card-clube,
+  .operador-card,
+  .evento-card {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .passos {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .passos li {
+    padding: 1.1rem;
+  }
+
+  /* ---------- Formulários ---------- */
+
+  .formulario,
+  .pagina-perfil,
+  .pagina-login .formulario {
+    max-width: 100%;
+  }
+
+  .campo input,
+  .campo select,
+  .campo textarea,
+  #busca,
+  textarea {
+    width: 100%;
+    min-height: 46px;
+    font-size: 16px; /* evita zoom automático no iPhone ao tocar no campo */
+  }
+
+  .abas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .abas .botao {
+    width: 100%;
+  }
+
+  /* ---------- Página de eventos e equipes ---------- */
+
+  .filtro {
+    padding: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .filtro select {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .evento-card .evento-foto {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* ---------- Rodapé ---------- */
+
+  .rodape {
+    padding-block: 2.25rem 1.25rem;
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .rodape-direitos {
+    font-size: 0.8rem;
+    text-align: center;
   }
 }
