@@ -426,3 +426,28 @@ img {
     transition: none !important;
   }
 }
+/* ============================================================
+   AJUSTES DO APP: grade sem estouro, banner legível, carrossel
+   ============================================================ */
+
+/* Grade de atalhos: colunas que podem encolher dentro da tela */
+.acoes,
+.destaque-acoes {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.acao {
+  min-width: 0;
+}
+
+/* Banner: escurece a imagem para o texto do app ficar em primeiro plano */
+.destaque {
+  background-image:
+    linear-gradient(180deg, rgba(12, 18, 10, 0.88) 0%, rgba(12, 18, 10, 0.97) 100%),
+    url("../imagens/banner-faes.png");
+}
+
+/* Carrossel: card um pouco mais largo para o texto não ficar apertado */
+.evento {
+  flex: 0 0 80%;
+}
